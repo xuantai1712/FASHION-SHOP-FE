@@ -1,0 +1,49 @@
+/* Đảm bảo wrapper và các phần tử con có layout phù hợp */
+#wrapper {
+  display: flex;
+  min-height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng màn hình */
+  overflow-x: hidden; /* Ngăn việc tràn ra ngoài màn hình */
+}
+
+#sidebar-wrapper {
+  width: 250px; /* Đặt chiều rộng cho sidebar */
+  background-color: #f8f9fa;
+  transition: margin-left 0.3s ease;
+}
+
+#main-content {
+  flex-grow: 1; /* Chiếm phần còn lại của màn hình */
+  padding: 20px;
+  overflow-y: auto; /* Cho phép cuộn dọc khi cần */
+}
+
+.sidebar-heading {
+  padding: 20px;
+  font-size: 1.25rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Khi sidebar bị ẩn đi */
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -250px; /* Ẩn sidebar */
+}
+
+/* Đảm bảo main content không bị chèn khi sidebar mở */
+#wrapper.toggled #main-content {
+  margin-left: 0; /* Điều chỉnh margin để không bị chèn */
+}

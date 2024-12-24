@@ -1,0 +1,181 @@
+
+
+<div class="container-fluid">
+  <div class="background-box">
+    <img src="../../../assets/images/backgroundCart.jpeg" alt="">
+    <div class="overlay"></div>
+  </div>
+  <div class="content-box" style="padding-top: 70px;height: auto;">
+    <div class="container" style="padding: 50px; ">
+      <div class="row" style="width: auto;   height: auto;">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="textTitle">
+            <h2> <i class="fa-solid fa-heart" style="font-weight: bolder;font-size: 21px;"> </i> WISHLIST </h2>
+          </div>
+
+        </div>
+        <p></p>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <div class="row">
+
+            <!-- render product cart -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 product-cartOne"
+                 *ngFor="let listWishlistItem of listWishlistItem">
+              <div class="row" style="padding: 10px;">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3" style="width: 180px;">
+                  <div class="img-product-cart">
+                    <img [src]="'assets/product_img/'+ listWishlistItem.productImage" alt="">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 col-xl-9" style="width: 615px;  ">
+                  <div class="row">
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 name-product-cart">
+                      <span>{{listWishlistItem.productName}}</span>
+                    </div>
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 size-color-product-cart">
+                      <div class="row" style="margin-top: 10px;">
+                        <div class="col-4  ">
+                                                    <span style="color: #2a2a2a;">Kích Thước : <span
+                                                      style="font-weight: bold;font-size: 18px;">{{listWishlistItem.skuResponse.size.name}}</span>
+                                                    </span><br>
+                          <span style="color: #2a2a2a;">Màu sắc : <span
+                            style="font-weight: bold;font-size: 16px;">{{listWishlistItem.skuResponse.color.name}}</span> </span>
+
+                        </div>
+                        <div class="col-7" style="padding-top: 10px;margin-left: 30px;">
+                          <div class="qty-product-cart">
+<!--                            <div class="input-group mb-3">-->
+<!--                                                            <span class="input-group-text"><i-->
+<!--                                                              class="fa-solid fa-minus"></i></span>-->
+<!--&lt;!&ndash;                              <input type="text" [(ngModel)]="listCartItem.quantity" (blur)="updateQty(listCartItem.id,listCartItem.quantity)">&ndash;&gt;-->
+<!--                              <span class="input-group-text"><i-->
+<!--                                class="fa-solid fa-plus"></i></span>-->
+<!--                            </div>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 price-product-cart"
+                         style="margin-top: -7px;">
+                      <div class="row">
+                        <div class="col-4 removeCart" style="padding-top: 15px;">
+                          <a (click)="deleteWishlist(listWishlistItem.id)">Remove</a>
+                        </div>
+                        <div class="col-4 priceInCart-product-cart"
+                             style="padding-top: 15px;padding-left: 20px; ">
+                                                    <span style="color: #2a2a2a;">Giá:
+                                                        <span style="padding-left: 3px;font-size: 16px;color: #82bad1;">
+                                                            {{listWishlistItem.price | currency : "VND" : ""}} </span>
+                                                        <span style="font-size: 10px;color: #2a2a2a;">Vnđ </span>
+
+                                                    </span>
+                        </div>
+<!--                        <div class="col-4 totalOne-product-cart "-->
+<!--                             style="padding-top: 15px;padding-left: 40px; width: 220px;">-->
+<!--                                                    <span style="   width: 200px;"><span style="color: #2a2a2a;">Tổng:-->
+<!--                                                        </span>-->
+<!--                                                        <span-->
+<!--                                                          style="padding-left: 3px;font-size: 18px;color: #e31732;">{{listWishlistItem.price  * listCartItem.quantity | currency : "VND" : ""}}-->
+<!--                                                        </span>-->
+<!--                                                        <span style="font-size: 10px;color: #2a2a2a; ">Vnđ-->
+<!--                                                        </span></span>-->
+<!--                        </div>-->
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+          </div>
+
+
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 placeholder" style="height: 500px;">
+
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="margin-top: -30px; position: fixed;
+                    left: 65%;top: 25%;
+                ">
+<!--          <div class="row">-->
+<!--            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">-->
+<!--              <div class="priceBill" style="font-weight: 700">-->
+<!--                <div class="row">-->
+<!--                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">-->
+<!--&lt;!&ndash;                    <span style="padding-right: 45px;">TỔNG TIỀN </span> <span&ndash;&gt;-->
+<!--&lt;!&ndash;                    style="font-size: 22px;  margin-left: 40px; ">{{totalPrice | currency: 'VND' : ''}} </span> <span&ndash;&gt;-->
+<!--&lt;!&ndash;                    style="font-size: 10px;color: #2a2a2a; ">Vnđ&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </span>?&ndash;&gt;-->
+<!--                  </div>-->
+<!--                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"-->
+<!--                       style="margin-top: 20px;">-->
+<!--                    <span style="margin-right: 55px;">KHẤU TRỪ :</span>-->
+<!--                    <span style="font-size: 22px;  margin-left: 24px; ">20,000 </span> <span-->
+<!--                    style="font-size: 10px;color: #1c0f0f; ">Vnđ-->
+<!--                                        </span>-->
+<!--                  </div>-->
+<!--                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"-->
+<!--                       style="margin-top: 20px;">-->
+<!--                    <span>TỔNG SỐ LƯỢNG :</span>-->
+<!--&lt;!&ndash;                    <span style="font-size: 22px;  margin-left: 34px; margin-right: 5px;">{{totalQty}} </span>&ndash;&gt;-->
+<!--                    <span style="font-size: 18px;color: #82bad1; ">Sản phẩm-->
+<!--                                        </span>-->
+<!--                  </div>-->
+<!--                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"-->
+<!--                       style="padding: 10px;">-->
+<!--                    <hr>-->
+<!--                  </div>-->
+<!--&lt;!&ndash;                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span>TỔNG HÓA ĐƠN :</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span style="font-size: 26px;  margin-left: 30px;color: #00b7ff; ">{{totalPrice + 20000 | currency : 'VND' :''}}&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </span> <span style="font-size: 10px;color: #2a2a2a; ">Vnđ&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </span>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+
+
+<!--                </div>-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">-->
+<!--              <div class="priceBill">-->
+<!--                <div class="row">-->
+<!--                  <div class="col-12">-->
+<!--                    <div class="btnBuyCart slide_leftbtnBuyCart" routerLink ="/payments">MUA NGAY</div>-->
+<!--                  </div>-->
+<!--                  <p></p>-->
+<!--                  <div class="col-5">-->
+<!--                    <hr>-->
+<!--                  </div>-->
+<!--                  <div class="col-2" style="text-align: center;">-->
+
+<!--                    Or-->
+<!--                  </div>-->
+<!--                  <div class="col-5">-->
+<!--                    <hr>-->
+<!--                  </div>-->
+<!--                  <p></p>-->
+<!--                  <div class="col-12">-->
+<!--                    <div class="btnBuyToContinue slide_leftbtnBuyToContinue">TIẾP TỤC MUA SẮM</div>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

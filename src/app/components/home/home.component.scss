@@ -1,0 +1,188 @@
+body
+{
+  background-color: #f1f1f0;
+}
+.titleHome span {
+
+   font-size: 50px;
+   font-weight: 200;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.titleHome p {
+   width: 800px;
+   font-size: 20px;
+   font-family: 'Gill Sans', 'Gill Sans MT',
+       Calibri, 'Trebuchet MS', sans-serif;
+   color: #929292;
+}
+
+.thum1 {
+   /* margin-right: -5px; */
+   margin-left: 36px;
+   width: 440px;
+   height: 800px;
+   background-color: #f1f1f0;
+}
+
+.thum1 img {
+   transition: transform 0.3s ease;
+   /* Thời gian và kiểu chuyển động cho hiệu ứng */
+   overflow: hidden;
+   width: 420px;
+   height: 600px;
+   object-fit: cover;
+}
+
+.thum1 img:hover {
+   transform: scale(0.9);
+   cursor: pointer;
+}
+
+.thum1 span {
+   margin-top: 10px;
+
+   margin-bottom: 10px;
+   font-weight: bold;
+   font-size: 35px;
+   font-weight: 200;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.thum1 p {
+
+   margin-top: 10px;
+   margin-bottom: 10px;
+   font-size: 20px;
+   font-family: 'Gill Sans', 'Gill Sans MT',
+       Calibri, 'Trebuchet MS', sans-serif;
+   color: #929292;
+   margin-bottom: 20px;
+}
+
+.thum1 a {
+   color: black;
+}
+
+.thum2 {
+  
+ 
+  width: 330px;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+
+
+}
+
+.thum2 i{
+  font-size: 50px;
+  margin-top: 110px;
+  color: #8f8f8f;
+}
+.thum2 span{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  font-weight: 200;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.thum2 p{
+  width: 290px;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT',
+      Calibri, 'Trebuchet MS', sans-serif;
+  color: #929292;
+  margin-bottom: 20px;
+}
+
+.thum3 {
+  /* margin-right: -5px; */
+
+  width: auto;
+  height: auto;
+  padding-bottom: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+.thum3 img {
+  transition: transform 0.3s ease;
+  /* Thời gian và kiểu chuyển động cho hiệu ứng */
+  overflow: hidden;
+  width: 450px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.thum3 img:hover {
+  transform: scale(0.9);
+}
+
+.thum3 span {
+
+color: #929292;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  font-weight: 200;
+  font-family: 'Times New Roman', Times, serif
+}
+
+.thum3 p {
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT',
+      Calibri, 'Trebuchet MS', sans-serif;
+  color: #8f8f8f;
+  margin-bottom: 20px;
+}
+
+.thum3 a {
+  color: black;
+}
+.thum4 p{
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT',
+      Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000;
+}
+.thum4 p{
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT',
+      Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000;
+}
+.thum4 a{
+  font-size: 15px;
+  font-weight: 600;
+ color: #111130;
+}.thum4 a:hover{
+  color: #82bad1;
+  
+}
+
+.thum5 img{
+  
+  width: 365px;
+  height: 496px;
+  object-fit: cover;
+}
+.thum5 p{
+  font-family: 'Times New Roman', Times, serif;
+}
+.thum5 span{
+  margin-left: 5px;
+font-weight: 500;
+}
+
+.thum5{
+  transition: transform 0.3s ease;
+  /* Thời gian và kiểu chuyển động cho hiệu ứng */
+  overflow: hidden;
+}
+
+.thum5:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}

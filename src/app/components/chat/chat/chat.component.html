@@ -1,0 +1,33 @@
+<!-- Nút bật/tắt chatbot -->
+<button class="chatbot-toggler" (click)="toggleChat()">
+  <span *ngIf="!isChatOpen" class="material-symbols-rounded">Brand</span>
+  <span *ngIf="isChatOpen" class="material-symbols-rounded">Close</span>
+</button>
+
+<!-- Giao diện chatbot -->
+<div class="chatbot" *ngIf="isChatOpen">
+  <header class="chatbot-header">
+    <h3>Brand Support</h3>
+  </header>
+  <ul class="chatbox">
+    <!-- Tin nhắn mặc định -->
+    <li class="chat incoming">
+      <span class="chat-icon">
+        <img src="/assets/images/logo.png" alt="icon" width="30" height="30">
+      </span>
+      <div>Xin chào, mình là Fpoly AI, mình có thể giúp gì cho bạn không?</div>
+    </li>
+
+    <!-- Hiển thị tin nhắn từ người dùng và phản hồi -->
+    <li *ngFor="let message of messages" class="chat" [ngClass]="message.type">
+      <span *ngIf="message.type === 'incoming'" class="chat-icon">
+        <img src="/assets/images/logo.png" alt="icon" width="30" height="30">
+      </span>
+      <div>{{ message.content }}</div>
+    </li>
+  </ul>
+  <div class="chat-input">
+    <textarea [(ngModel)]="userMessage" placeholder="Nhập câu hỏi ở đây..." spellcheck="false"></textarea>
+    <button (click)="sendMessage()">Gửi</button>
+  </div>
+</div>

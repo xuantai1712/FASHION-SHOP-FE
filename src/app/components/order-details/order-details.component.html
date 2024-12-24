@@ -1,0 +1,93 @@
+<div class="container-fluid mt-5">
+  <div class="container">
+    <!-- Title -->
+    <div class="d-flex justify-content-between align-items-center py-3">
+      <h2 class="h5 mb-0">Đơn hàng #{{ listOrderDetailProfile?.orderId }}</h2>
+    </div>
+
+    <!-- Main content -->
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Details -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="mb-3">
+              <div class="d-flex  justify-content-between  align-items-center">
+                <span class="me-3 badge text-bg-info">Ngày đặt hàng: {{ listOrderDetailProfile?.create_at | date: 'dd/MM/yyyy - HH:mm' }}</span> <br>
+                <span class="badge rounded-pill text-bg-info ">Trạng thái: {{ listOrderDetailProfile?.status }}</span>
+              </div>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+              <tr >
+                <td>
+
+
+                  <div class="d-flex mb-2" *ngFor="let productDetailResult of listOrderDetailResult" style="padding-bottom: 10px;">
+                    <div class="flex-shrink-0">
+                      <img [src]="'assets/product_img/'+ productDetailResult.image" alt="Name hinh " width="100px" >
+
+
+                    </div>
+                    <div class="flex-lg-grow-1 ms-3">
+                      <h6 class="small mb-0 designtext">Tên sản phẩm :<span style="font-weight: 400;color: #00b7ff;"> {{ productDetailResult?.productName }}</span></h6>
+                      <span class="small " style="margin-right: 10px;" >- Màu  sắc :<span style="font-weight: 500;color: #00b7ff;" >  {{productDetailResult?.colorname}} </span> </span><br>
+                      <span class="small " style="margin-right: 50px;">- Kích thước :<span style="font-weight: 500;color: #00b7ff;"> {{productDetailResult?.sizename}}   </span></span>
+                      <span class="small " style="margin-left: 30px;font-weight: 500;">- Số lượng:   <span style="font-weight: 500;color: #00b7ff;">  {{productDetailResult?.quantity}}  </span> </span>
+                      <span class="small " style="margin-left: 30px;">- Đơn giá:   {{productDetailResult?.price | currency : "VND" : ""}} VNĐ </span>
+
+                    </div>
+                  </div>
+
+
+                </td>
+<!--                <td>{{ product?.quantity }}</td>-->
+<!--                <td class="text-end">{{ product?.price | currency }}</td>-->
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+<!--                <td colspan="2">Tổng phụ</td>-->
+                   <!--                <td class="text-end">{{ orderDetails?.subTotal | currency }}</td>-->
+                                 </tr>
+              <tr>
+<!--                <td colspan="2">Phí ship</td>-->
+<!--                <td class="text-end">{{ orderDetails?.shippingFee | currency }}</td>-->
+<!--              </tr>-->
+              <tr>
+<!--                <td colspan="2">Mã giảm giá (Code: {{ orderDetails?.discountCode }})</td>-->
+<!--                <td class="text-danger text-end">-{{ orderDetails?.discountAmount | currency }}</td>-->
+              </tr>
+              <tr class="fw-bold">
+                <td colspan="2">Tổng tiền</td>
+                <td class="text-end">{{ listOrderDetailProfile?.totalPrice | currency : "VND" :"" }} VNĐ</td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <h3 class="h6">Phương thức thanh toán</h3>
+                <p>{{ listOrderDetailProfile?.paymentMethod}} <br>
+<!--                  Tổng: {{ orderDetails?.totalAmount | currency }} <span class="badge bg-success rounded-pill">{{ orderDetails?.paymentStatus }}</span>-->
+<!--                </p>-->
+              </div>
+              <div class="col-lg-6">
+                <h3 class="h6">Địa chỉ</h3>
+
+                  <strong>{{ listOrderDetailProfile?.shippingAddress }}</strong><br>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

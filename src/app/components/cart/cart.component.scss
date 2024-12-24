@@ -1,0 +1,223 @@
+
+.background-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    z-index: -1;
+
+  }
+
+.overlay {
+
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:
+   rgb(255, 255, 255,0.2); /* Màu trắng với độ mờ 50% */
+  z-index: 2; /* Đặt lớp phủ nằm trên ảnh nền */
+}
+  .content-box {
+    position: relative;
+    z-index: 2; /* Giá trị cao hơn để hiển thị trên ảnh */
+    color: white; /* Tùy chọn màu chữ để tương phản với nền */
+    padding: 20px;
+    height: auto;
+  }
+
+.textTitle h2{
+    border-radius: 28px;
+    text-align: center;
+    width: 250px;
+    background-color: rgb(255, 255, 255,0.85);
+    padding: 6px;
+    color: black;
+    font-family: "Kanit", sans-serif;
+}
+.product-cartOne{
+    margin-bottom: 14px;
+    border-radius: 20px;
+    width: 850px;
+    background-color: rgb(255, 255, 255,0.85);
+}
+.img-product-cart img{
+  transition: transform 0.3s ease;
+    border-radius: 5px;
+    width: 155px;
+    height: 160px;
+    object-fit: cover;
+}
+.name-product-cart span{
+    color: #2a2a2a;
+    width: auto;
+    font-family: "Kanit", sans-serif;
+font-size: 20px;
+}
+.size-color-product-cart{
+    margin-top: 3px;
+    width: 560px;
+    // background-color: red;
+}
+.size-color-product-cart span{
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+}
+
+
+.qty-product-cart span {
+    background-color: white;
+     text-align: center;
+     border-radius: 8px;
+     font-family: "Lucida Console", Monaco, monospace;
+     font-size: 10px;
+     letter-spacing: 1px;
+     cursor: pointer;
+     box-shadow: inset 0 0 0 0 #D80286;
+     -webkit-transition: ease-out 0.4s;
+     -moz-transition: ease-out 0.4s;
+     transition: ease-out 0.4s;
+   }
+
+   .qty-product-cart span:hover {
+     color: white;
+
+     box-shadow: inset 0 0 0 50px #82bad1;
+   }
+
+   .qty-product-cart input {
+    font-family: "Kanit", sans-serif;
+
+//   font-size: 18px;
+     text-align: center;
+     border-top: 1px solid #eef0f2;
+     border-bottom: 1px solid #eef0f2;
+     border-left:1px solid #eef0f2 ;
+     border-right:none ;
+
+     height: 30px;
+     width: 50px;
+   }
+  .price-product-cart{
+    width: 600px;
+    height: 40px;
+    // background-color: #D80286;
+  }
+  .price-product-cart a{
+    color: #82bad1;
+    text-decoration: none;
+    font-style: italic;
+    font-family: "Kanit", sans-serif;
+
+  }
+
+  .price-product-cart a:hover{
+    color: red;
+  }
+
+  .priceInCart-product-cart {
+    width: 178px;
+
+  }
+  .priceInCart-product-cart span{
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+
+  }
+  .totalOne-product-cart span{
+    font-size: 15px;
+    font-family: "Kanit", sans-serif;
+  }
+  .priceBill{
+
+    padding: 16px;
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+  }
+  .priceBill{
+    border-radius: 10px;
+    width: 395px;
+    color: #2a2a2a;
+    font-family: "Kanit", sans-serif;
+
+  }
+
+  .placeholder {
+    visibility: hidden; /* Giữ không gian nhưng không hiển thị nội dung */
+}
+
+  .btnBuyCart {
+    font-weight: bolder;
+    background-color:rgb(130, 186, 211, 0.3);
+    text-align: center;
+    width: 360px;
+    color: #000000;
+    border: 2px solid #82bad3;
+    border-radius: 5px;
+    padding: 15px 36px;
+    display: inline-block;
+    font-family: "Kanit", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #82bad3;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    height: 60px;
+  }
+
+  .slide_leftbtnBuyCart:hover {
+    color: white;
+    box-shadow: inset 0 0 0 50px #82bad3;
+  }
+
+
+
+  .btnBuyToContinue {
+    font-weight: bolder;
+    background-color:rgb(152, 244, 177,0.3);
+    text-align: center;
+    width: 360px;
+    color: #000000;
+    border: 2px solid rgb(152, 244, 177);
+    border-radius: 5px;
+    padding: 15px 36px;
+    display: inline-block;
+    font-family: "Kanit", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 rgb(152, 244, 177);
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    height: 60px;
+  }
+
+  .slide_leftbtnBuyToContinue:hover {
+    color: white;
+    box-shadow: inset 0 0 0 50px  rgb(152, 244, 177,0.7);
+  }
+
+
+
+.alert {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  z-index: 9999;
+}
+.img-product-cart img:hover{
+  cursor: pointer; /* Chuyển con trỏ thành bàn tay khi hover */
+  transform: scale(0.9);
+
+}
+
+

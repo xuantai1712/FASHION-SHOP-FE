@@ -1,0 +1,5 @@
+div[style*="height: 100px"] {
+  height: 0 !important; /* Đặt chiều cao về 0 */
+  overflow: hidden;     /* Ngăn nội dung bên trong */
+  display: none !important; /* Ẩn hoàn toàn phần tử */
+}

@@ -1,0 +1,121 @@
+<div class="container-fluid">
+  <div class="background-box">
+    <img src="../../../assets/images/background2.avif" alt="">
+    <div class="overlay"></div>
+  </div>
+  <div class="content-box" style="padding-top: 80px;">
+    <div class="container p-5 border border-1 mt-5 mb-5" style="background-color: rgba(255, 255, 255, 0.6);">
+      <div class="row">
+        <!-- Login Section -->
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 loginText">
+          <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
+<!--          <p>{{ 'LOGIN.DESCRIPTION' | translate }}</p>-->
+          <form #loginForm="ngForm">
+            <div class="row form-design">
+              <!-- Email -->
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                <label class="form-label fw-bold">{{ 'LOGIN.EMAIL_LABEL' | translate }}</label>
+                <input
+                  class="form-control"
+                  name="email"
+                  [(ngModel)]="email"
+                  (input)="onEmailChange()"
+                  id="email"
+                  #emailCtrl="ngModel"
+                  required
+                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                />
+                <div *ngIf="emailCtrl.touched && emailCtrl.invalid" class="error mt-2">
+                  <div *ngIf="emailCtrl.errors?.['required']" class="text-danger">
+                    {{ 'LOGIN.EMAIL_REQUIRED' | translate }}
+                  </div>
+                  <div *ngIf="emailCtrl.errors?.['pattern']" class="text-danger">
+                    {{ 'LOGIN.EMAIL_PATTERN' | translate }}
+                  </div>
+                </div>
+              </div>
+              <!-- Password -->
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                <label class="form-label fw-bold">{{ 'LOGIN.PASSWORD_LABEL' | translate }}</label>
+                <input
+                  type="{{ showPassword ? 'text' : 'password' }}"
+                  [(ngModel)]="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  #passwordCtrl="ngModel"
+                  required
+                  pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$"
+                />
+                <div *ngIf="passwordCtrl.touched && passwordCtrl.invalid" class="error mt-2">
+                  <div *ngIf="passwordCtrl.errors?.['required']" class="text-danger">
+                    {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
+                  </div>
+                  <div *ngIf="passwordCtrl.errors?.['pattern']" class="text-danger">
+                    {{ 'LOGIN.PASSWORD_PATTERN' | translate }}
+                  </div>
+                </div>
+              </div>
+              <!-- Toggle Password & Forgot Password -->
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                <div class="row">
+                  <div class="col-9">
+                    <div class="form-check ps-0">
+                      <i
+                        class="password-toggle fas text-black ms-0 me-3"
+                        [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"
+                        (click)="togglePassword()"
+                      ></i>
+                      <label class="form-check-label" style="font-size: 18px; padding-top: 4px;">
+                        {{ 'LOGIN.SHOW_PASSWORD' | translate }}
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-3" style="padding-top: 4px;">
+                    <a routerLink="/forgotPass" class="text-success" style="text-decoration: none; color: #238bc8 !important;">
+                      {{ 'LOGIN.FORGOT_PASSWORD' | translate }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Error Message -->
+              <div *ngIf="errorMessage" class="error-message text-danger mb-4">
+                {{ errorMessage }}
+              </div>
+              <!-- Submit Button -->
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                <div class="row">
+                  <div class="col-12 col-sm-5 col-md-5" style="margin-right: -15px;">
+                    <div class="btnLogin slide_leftbtnLogin" (click)="login()">
+                      {{ 'LOGIN.LOGIN_BUTTON' | translate }}
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-7 col-md-7">
+                    <div class="btnLoginWithGoogle slide_leftbtnbtnLoginWithGoogle">
+                      {{ 'LOGIN.LOGIN_WITH_GOOGLE' | translate }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Signup Section -->
+        <div
+          class="col-sm-12 col-md-6 col-lg-6 col-xl-6"
+          style="background-color: rgb(255, 255, 255, 0.4); border: 1px solid #ebeced; border-radius: 10px; margin-top: -20px;"
+        >
+          <div class="row form-design" style="padding-left: 10px; padding-right: 5px;">
+            <h2>{{ 'SIGNUP.TITLE' | translate }}</h2>
+            <p>{{ 'SIGNUP.DESCRIPTION' | translate }}</p>
+          </div>
+          <div class="anim-btn" style="margin-left: 10px;" routerLink="/signin">
+            <div class="btnSignin slide_leftbtnSignin" (click)="createAccount()">
+              {{ 'SIGNUP.CREATE_ACCOUNT_BUTTON' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

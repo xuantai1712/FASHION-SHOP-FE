@@ -1,0 +1,41 @@
+/*!* Cập nhật bảng *!*/
+/*.table th, .table td {*/
+/*  padding: 10px;*/
+/*  text-align: center; !* Căn giữa nội dung trong các ô *!*/
+/*  vertical-align: middle; !* Căn giữa nội dung theo chiều dọc *!*/
+/*  word-wrap: break-word; !* Đảm bảo nội dung không bị tràn ra ngoài *!*/
+/*}*/
+
+/*!* Điều chỉnh chiều rộng của các cột *!*/
+/*.table th, .table td {*/
+/*  width: 13%; !* Giảm chiều rộng cột để các cột ngang hàng *!*/
+/*}*/
+
+/* Cột Color */
+
+.table td img {
+  width: 20px; /* Giảm kích thước ảnh trong cột Color */
+  height: 20px;
+  object-fit: cover;
+  border-radius: 50%; /* Nếu bạn muốn ảnh tròn */
+}
+
+
+
+
+.table td div {
+  padding-bottom: 20px;
+}
+
+.table td:nth-child(7) div {
+  padding-bottom: 13px; /* Loại trừ cột Action, không có padding-bottom */
+}
+
+
+.alert {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  z-index: 9999;
+}

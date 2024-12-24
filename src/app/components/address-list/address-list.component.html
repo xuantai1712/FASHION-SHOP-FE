@@ -1,0 +1,83 @@
+<div class="container mt-5">
+  <h2 class="text-center">Danh sách địa chỉ</h2>
+
+
+
+  <button class="btn btn-primary mb-3" (click)="openModal()">Thêm Mới</button>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr class="text-center">
+      <th>STT</th>
+      <th>Thành phố</th>
+      <th>Quận</th>
+      <th>Đường</th>
+      <th>Mặc định</th>
+      <th>Thao tác</th>
+    </tr>
+    </thead>
+    <tbody class="text-center">
+    <tr *ngFor="let addr of address; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ addr.city }}</td>
+      <td>{{ addr.ward }}</td>
+      <td>{{ addr.street }}</td>
+      <td>{{ addr.isDefault ? 'Có' : 'Không' }}</td>
+      <td class="d-flex justify-content-around">
+        <button class="btn btn-sm btn-warning" (click)="openModal(addr)">Sửa</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteAddress(addr.id)">Xóa</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Form -->
+<div class="modal" tabindex="-1" [ngClass]="{'show d-block': isModalOpen}" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-between">
+        <h5 class="modal-title">{{ isEditMode ? 'Cập nhật Địa chỉ' : 'Thêm mới Địa chỉ' }}</h5>
+        <button type="button" class="close-btn" (click)="closeModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Thành phố</label>
+            <input type="text" class="form-control" formControlName="city" />
+            <div *ngIf="addressForm.get('city')?.touched && addressForm.get('city')?.invalid" class="text-danger">
+              Thành phố không được để trống.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Quận</label>
+            <input type="text" class="form-control" formControlName="ward" />
+            <div *ngIf="addressForm.get('ward')?.touched && addressForm.get('ward')?.invalid" class="text-danger">
+              Quận không được để trống.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Đường</label>
+            <input type="text" class="form-control" formControlName="street" />
+            <div *ngIf="addressForm.get('street')?.touched && addressForm.get('street')?.invalid" class="text-danger">
+              Đường không được để trống.
+            </div>
+          </div>
+
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" formControlName="isDefault" />
+            <label class="form-check-label">Mặc định</label>
+          </div>
+
+          <button type="submit" class="btn btn-success" [disabled]="addressForm.invalid">
+            {{ isEditMode ? 'Cập nhật' : 'Thêm mới' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

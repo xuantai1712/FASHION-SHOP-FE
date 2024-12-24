@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <h2>TOP SẢN PHẨM BÁN CHẠY</h2>
+
+  <!-- Chọn tháng và năm -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <label for="monthSelect">Tháng</label>
+      <select id="monthSelect" [(ngModel)]="selectedMonth" class="form-select">
+        <option *ngFor="let month of months" [value]="month.value">{{ month.label }}</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label for="yearSelect">Năm</label>
+      <select id="yearSelect" [(ngModel)]="selectedYear" class="form-select">
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 d-flex align-items-end">
+      <button (click)="loadTopSellingProducts()" class="btn btn-primary w-100">Tìm Kiếm</button>
+    </div>
+  </div>
+
+  <!-- Hiển thị khi đang tải dữ liệu -->
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Hiển thị thông báo lỗi -->
+  <div *ngIf="!loading && errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Hiển thị thông báo không có dữ liệu -->
+  <div *ngIf="!loading && !errorMessage && topSellingProducts.length === 0" class="alert alert-info">
+    No data available for this period.
+  </div>
+
+  <!-- Hiển thị dữ liệu dưới dạng table -->
+  <div *ngIf="!loading && topSellingProducts.length > 0">
+    <table class="table table-bordered table-hover mt-4">
+      <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Hình Ảnh</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Màu</th>
+        <th>Kích Cỡ</th>
+        <th>Tổng số lượng bán</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of topSellingProducts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img
+            [src]="'/assets/product_img/' + product.productImage"
+            alt="{{ product.productName }}"
+            class="img-thumbnail"
+            style="width: 100px; height: 100px;"
+          />
+        </td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.colorName }}</td>
+        <td>{{ product.size }}</td>
+        <td>{{ product.totalSold }}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.modal.show {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);  /* Thêm nền mờ */
+}
+
+/* Thêm hiệu ứng cho modal */
+.modal {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show.d-block {
+  display: block;
+  opacity: 1;
+}
+
+.modal-dialog {
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal.show.d-block .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Tùy chỉnh cho nút đóng */
+button.close-btn {
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+button.close-btn:hover {
+  color: #f00;
+}
+
+/* Nút xóa và sửa thêm hiệu ứng hover */
+button.btn-warning, button.btn-danger {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.btn-warning:hover, button.btn-danger:hover {
+  transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+}
+
+button.btn-warning:focus, button.btn-danger:focus {
+  outline: none;
+}
+

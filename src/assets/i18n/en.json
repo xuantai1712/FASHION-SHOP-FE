@@ -1,0 +1,33 @@
+{
+  "LOGIN": {
+    "TITLE": "LOGIN",
+    "EMAIL_LABEL": "EMAIL ADDRESS",
+    "PASSWORD_LABEL": "PASSWORD",
+    "LOGIN_BUTTON": "LOGIN",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "SHOW_PASSWORD": "Show password",
+    "LOGIN_WITH_GOOGLE": "Login with google",
+    "EMAIL_REQUIRED": "Email is required.",
+    "EMAIL_PATTERN": "Please enter a valid email address.",
+    "PASSWORD_REQUIRED": "Password is required.",
+    "PASSWORD_PATTERN": "Password must contain at least 6 characters, including 1 uppercase letter and 1 number."
+
+  },
+  "SIGNUP": {
+    "TITLE": "CREATE AN ACCOUNT",
+    "DESCRIPTION": "Create an account now! Access exclusive services.",
+    "CREATE_ACCOUNT_BUTTON": "REGISTER A NEW ACCOUNT"
+  },
+  "LOGIN1": "Login",
+  "SIGNUP1": "Sign Up",
+  "PROFILE": "Profile",
+  "LOGOUT": "Logout",
+  "LANG": "ENGLISH",
+  "HOME_DESCRIPTION": "Explore our amazing collection of products.",
+  "CART": "CART",
+  "TOTAL_PRICE": "TOTAL PRICE",
+  "TOTAL_QUANTITY": "TOTAL QUANTITY",
+  "TOTAL_BILL": "TOTAL BILL",
+  "BUY_NOW": "BUY NOW",
+  "CONTINUE_SHOPPING": "CONTINUE SHOPPING"
+}

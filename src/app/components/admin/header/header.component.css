@@ -1,0 +1,26 @@
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #007bff; /* Màu của liên kết */
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Màu của liên kết khi hover */
+}
+
+.nav-item.active .nav-link {
+  font-weight: bold;
+}
+
+div[style*="height: 100px"] {
+  height: 0 !important; /* Đặt chiều cao về 0 */
+  overflow: hidden;     /* Ngăn nội dung bên trong */
+  display: none !important; /* Ẩn hoàn toàn phần tử */
+}

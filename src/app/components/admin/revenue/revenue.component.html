@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <h2>Doanh thu của năm {{ year }}</h2>
+
+  <div *ngIf="monthlyRevenue.length === 0" class="alert alert-info">
+    No revenue data available for this year.
+  </div>
+
+  <!-- Select box to choose year -->
+  <div class="form-group">
+    <label for="yearSelect">Chọn Năm:</label>
+    <select id="yearSelect" class="form-control" [(ngModel)]="year" (change)="onYearChange()">
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+
+  <!-- Chart canvas -->
+  <canvas #myChart width="800" height="500"></canvas>
+
+
+  <div class="mt-4">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">Tháng</th>
+        <th scope="col">Tổng Doanh Thu (VNĐ)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let revenue of monthlyRevenue">
+        <td>{{ getMonthName(revenue.month - 1) }}</td>
+        <td>{{ revenue.totalRevenue | number: '1.0' }} VNĐ</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

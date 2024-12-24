@@ -1,0 +1,328 @@
+  // font-family: "Kanit", sans-serif;
+
+.background-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  z-index: -1;
+
+}
+
+.overlay {
+
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color:
+    rgb(255, 255, 255,0.4); /* Màu trắng với độ mờ 50% */
+  z-index: 2; /* Đặt lớp phủ nằm trên ảnh nền */
+}
+.content-box {
+  position: relative;
+  z-index: 2; /* Giá trị cao hơn để hiển thị trên ảnh */
+  color: white; /* Tùy chọn màu chữ để tương phản với nền */
+  padding: 20px;
+  height: auto;
+}
+.placeholder {
+  visibility: hidden; /* Giữ không gian nhưng không hiển thị nội dung */
+}
+.priceBill{
+
+  padding: 16px;
+  width: auto;
+  height: auto;
+  background-color: rgb(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+.priceBill{
+  border-radius: 10px;
+  width: 395px;
+  color: #2a2a2a;
+  font-family: "Kanit", sans-serif;
+
+}
+
+
+.placeholder {
+  visibility: hidden; /* Giữ không gian nhưng không hiển thị nội dung */
+}
+
+.textTitle h2{
+  border-radius: 28px;
+  text-align: center;
+  width: 250px;
+  background-color: rgb(255, 255, 255,0.85);
+  padding: 6px;
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+
+.textTitle span{
+  font-weight: 500;
+  font-size: 22px;
+
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+
+.textTitle p{
+  font-size: 14px;
+  color: #a9a9a9;
+  font-family: "Kanit", sans-serif;
+}
+.designText p{
+  font-weight: 300;
+  font-size: 15px;
+
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+
+.nameUserAddress span{
+  font-weight: 500;
+  font-size: 22px;
+   font-size: 16px;
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+.userAddress span{
+  font-weight: 400;
+  font-size: 22px;
+   font-size: 16px;
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+hr{
+  color: #000000;
+}
+
+.btnLogin {
+  font-weight: bolder;
+  background-color:rgb(130, 186, 211, 0.3);
+  text-align: center;
+  width: 100px;
+  color: #000000;
+  border: 2px solid #82bad3;
+  border-radius: 5px;
+  padding: 5px 15px;
+  display: inline-block;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #82bad3;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  height: 40px;
+}
+.slide_leftbtnLogin:hover {
+  color: white;
+  box-shadow: inset 0 0 0 50px #82bad3;
+}
+.backgroundAccordior button:hover{
+  color: #82bad3;
+
+  background-color: rgba(213, 231, 238, 0.82);
+
+}
+
+
+.backgroundAccordior {
+  background-color: rgba(255, 255, 255, 0.82);
+  width: 800px;
+  border-radius: 18px;
+  margin-left: 1px;
+  // padding-bottom: 5px;
+}
+.textTitle button{
+  padding-left: 20px;
+text-align: left;
+  border: none;
+  width: 800px;
+  border-radius: 18px;
+
+  background-color: rgba(147, 27, 27, 0);
+
+}
+
+.form-design {
+
+padding-left: 25px;
+padding-right: 25px;
+}
+
+.form-design label{
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+
+.form-design input{
+  height: 50px;
+  border-radius: 3px;
+  color: black;
+  font-family: "Kanit", sans-serif;
+}
+ .designAddress {
+  color: black;
+  font-family: "Kanit", sans-serif;
+  border-radius: 4px;
+  height: 50px;
+ }
+ .designAddress option{
+  color: black;
+  font-family: "Kanit", sans-serif;
+  border-radius: 4px;
+  height: 50px;
+ }
+
+
+
+.btnCreateAddress {
+  font-weight: bolder;
+  background-color:rgb(130, 186, 211, 0.3);
+  text-align: center;
+  width: 680px;
+  color: #000000;
+  border: 2px solid #82bad3;
+  border-radius: 5px;
+  padding: 14px 30px;
+  display: inline-block;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #82bad3;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  height: 55px;
+}
+.slide_leftbtnCreateAddress:hover {
+  color: white;
+  box-shadow: inset 0 0 0 50px #82bad3;
+}
+.form-design p{
+  font-size: 14px;
+  color: #a9a9a9;
+  font-family: "Kanit", sans-serif;
+}
+.createCard{
+  border: 1px solid rgb(178, 178, 178);
+  background-color: rgb(157, 179, 198,0);
+}
+
+.createCard input{
+  height: 50px;
+  border-radius: 3px;
+  color: black;
+  font-family: "Kanit", sans-serif;
+
+}
+.priceBill{
+
+  padding: 16px;
+  width: auto;
+  height: auto;
+  background-color: rgb(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+.priceBill{
+  border-radius: 10px;
+  width: 395px;
+  color: #2a2a2a;
+  font-family: "Kanit", sans-serif;
+
+}
+
+.placeholder {
+  visibility: hidden; /* Giữ không gian nhưng không hiển thị nội dung */
+}
+
+.btnPayment {
+  font-weight: bolder;
+  background-color:rgb(130, 186, 211, 0.3);
+  text-align: center;
+  width: 360px;
+  color: #000000;
+  border: 2px solid #82bad3;
+  border-radius: 5px;
+  padding: 15px 36px;
+  display: inline-block;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #82bad3;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  height: 60px;
+}
+
+.slide_leftbtnPayment:hover {
+  color: white;
+  box-shadow: inset 0 0 0 50px #82bad3;
+}
+
+
+
+.btnBuyToContinue {
+  font-weight: bolder;
+  background-color:rgb(152, 244, 177,0.3);
+  text-align: center;
+  width: 360px;
+  color: #000000;
+  border: 2px solid rgb(152, 244, 177);
+  border-radius: 5px;
+  padding: 15px 36px;
+  display: inline-block;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 rgb(152, 244, 177);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  height: 60px;
+}
+
+.slide_leftbtnBuyToContinue:hover {
+  color: white;
+  box-shadow: inset 0 0 0 50px  rgb(152, 244, 177,0.7);
+}
+
+
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+  }

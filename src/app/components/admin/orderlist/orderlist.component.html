@@ -1,0 +1,42 @@
+<div class="container my-4">
+  <h1 class="mb-4">Order List</h1>
+  <table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Order ID</th>
+      <th>Shipping Address</th>
+      <th>Phone Number</th>
+      <th>Total Money</th>
+      <th>Shipping Method</th>
+      <th>Payment Method</th>
+      <th>Create At</th>
+      <th>Status</th>
+      <th>DETAIL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ order.id }}</td>
+      <td>{{ order.shippingAddress }}</td>
+      <td>{{ order.phoneNumber }}</td>
+      <td>{{ order.totalMoney | currency:"VND":"" }} VNĐ</td>
+
+      <td>{{ order.shippingMethod }}</td>
+      <td>{{ order.paymentMethod }}</td>
+      <td>{{ order.create_at }}</td>
+      <td>{{ order.status }}</td>
+      <td>
+        <button
+          class="btn btn-sm btn-primary"
+          (click)="goToOrderDetails(order.id)"
+        >
+          View Details
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

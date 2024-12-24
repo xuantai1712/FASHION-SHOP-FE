@@ -1,0 +1,121 @@
+.navAll{
+    z-index: 3;
+    justify-content: center; /* Canh giữa thanh điều hướng */
+    align-items: center;     /* Căn chỉnh theo chiều dọc */
+    width: 100%;
+    width: auto;
+    background-color: rgb(140, 62, 62,0);
+    border-bottom: 1px solid rgb(218, 218, 218);
+    position: absolute;
+}
+
+.navbar-brand {
+
+    font-size: 30px;
+    margin-left: 135px;
+    font-family: "Kanit", sans-serif;
+    font-weight:bold ;
+}
+.nav-item a{
+    color: black;
+    font-weight: bolder;
+}
+.nav-link  i{
+
+    margin-left: 27px;
+    font-size: 20px;
+}
+
+.dropdown-menu li{
+
+    border-bottom: 1px solid wheat ;
+    // margin-top: -10px;
+    // margin-bottom: -10px;
+   margin-left: 8px;
+
+
+
+
+}
+.dropdown-menu li a{
+    color: white;
+    padding-top: 15px;
+    height: 50px;
+
+   }
+.dropdown-menu {
+
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    border: none;
+    font-family: "Kanit", sans-serif;
+    display: none;
+    position: absolute;
+    left: 0%;
+    top: 80%;
+
+}
+.dropdown-submenu ul{
+    background-color: aqua;
+ }
+
+.dropdown-submenu .dropdown-menu {
+    left: 100%;
+    top: 20%;
+    margin-top: -5px;
+
+}
+.nav-item:hover > .dropdown-menu {
+
+
+    display: block; /* Hiển thị tầng 1 khi di chuột vào */
+}
+.nav-item:hover > .dropdown-menu li a{
+    color: rgb(255, 255, 255);
+}
+
+
+
+.dropdown-submenu:hover > .dropdown-menu{
+
+    display: block; /* Hiển thị tầng 2 khi di chuột vào */
+}
+.dropdown-submenu:hover > .dropdown-menu a{
+
+   color: black;
+}
+.dropdown-menu li a:hover {
+    color: #ffcc00; /* Màu chữ khi hover vào */
+    background-color: #333333; /* Màu nền khi hover vào */
+}
+.nav-item:hover > .dropdown-menu {
+
+    background-color: #000000; /* Màu nền cho dropdown tầng 1 khi hover vào nav-item */
+}
+.dropdown-submenu:hover > .dropdown-menu {
+    background-color:   #000000; /* Màu nền cho dropdown tầng 2 khi hover vào */
+}
+
+.dropdown-submenu:hover > .dropdown-menu a {
+    color: #bb8739; /* Màu chữ cho dropdown tầng 2 khi hover vào */
+}
+.dropdown-item-link-tang2:hover {
+    color: #000; /* Màu chữ đen khi hover vào */
+    background-color: #eeeeee; /* Màu nền khi hover vào */
+}
+.tabs{
+    transition: transform 0.9s ease, box-shadow 0.9s ease,
+     background-color 0.9s ease;
+    color: #000000;
+}
+
+.tabs:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+    // background-color: #eff1f3;
+    /* Màu nền mới khi hover */
+    border-radius: 6px;
+    color: #82bad1  !important;
+}

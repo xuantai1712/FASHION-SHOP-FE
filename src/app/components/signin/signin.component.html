@@ -1,0 +1,206 @@
+<!-- <div class="container">
+    <div class="textLink" style="margin-left: 40px; padding: 10px;"><span style="
+      font-family:  'Kanit', sans-serif; font-size: 17px;font-weight: 500;
+      ">Home</span>
+        <span style="padding: 5px;">/</span>
+        <span style="color: #8ba1b0; font-size: 12px;font-weight: 500;">Products</span>
+        <span style="padding: 5px;">/</span>
+        <span style="color: #8ba1b0; font-size: 12px;font-weight: 500;">Product detail</span>
+    </div>
+</div> -->
+<!-- CONTENT -->
+<div class="container-fluid">
+    <div class="background-box">
+        <img src="../../../assets/images/background2.avif" alt="">
+        <div class="overlay"></div>
+    </div>
+    <div class="content-box" style="padding-top: 50px;">
+
+        <div class="container p-5 border border-1 mt-5 " style="background-color: rgba(255, 255, 255, 0.6);">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 signintext">
+                    <h2>ĐĂNG KÝ</h2>
+                    <p>Đăng ký bằng địa chỉ email và mật khẩu của bạn.</p>
+                    <form  #registerForm="ngForm" (ngSubmit)="register()">
+                        <div class="row form-design">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                                <label class="form-label fw-bold" >HỌ VÀ TÊN </label>
+                                <input class="form-control "
+                                       type="text"
+                                       id="name"
+                                       name="name"
+                                       [(ngModel)]="name"
+                                       #nameCtrl="ngModel"
+                                       required
+                                />
+
+                              <div *ngIf="nameCtrl.touched && nameCtrl.invalid" class="error mt-2">
+                                <div *ngIf="nameCtrl.errors?.['required']" class="text-danger">Vui lòng nhập tên.</div>
+                              </div>
+                            </div>
+
+
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                                <label class="form-label fw-bold" >ĐỊA CHỈ EMAIL </label>
+                                <input  class="form-control"
+                                       type="email"
+                                       id="email"
+                                       name="email"
+                                       [(ngModel)]="email"
+                                       #emailCtrl="ngModel"
+                                        (ngModelChange)="checkEmailExists()"
+                                        required
+                                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                />
+                              <div *ngIf="emailCtrl.touched && emailCtrl.invalid" class="error mt-2">
+                                <div *ngIf="emailCtrl.errors?.['required']"
+                                     class="text-danger">Vui lòng nhập email.</div>
+                                <div *ngIf="emailCtrl.errors?.['pattern']"
+                                     class="text-danger">Vui lòng nhập email đúng định dạng.</div>
+                                <div *ngIf="emailCtrl.errors?.['emailTaken']" class="text-danger">Email này đã được đăng ký .</div>
+                              </div>
+                            </div>
+
+                          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                            <label class="form-label fw-bold" >SỐ ĐIỆN THOẠI </label>
+                            <input
+                              type="text" class="form-control"
+                              id="phone"
+                              name="phone"
+                              [(ngModel)]="phone"
+                              #phoneCtrl="ngModel"
+                              (ngModelChange)="checkPhoneExists()"
+                              required
+                              pattern="^0(3[2-9]|5[2-9]|7[0|6-9]|8[1-9]|9[0-9])\d{7}$"
+                            />
+                            <div *ngIf="phoneCtrl.touched && phoneCtrl.invalid" class="error mt-2">
+                              <div *ngIf="phoneCtrl.errors?.['required']"
+                                   class="text-danger">Vui lòng nhập số điện thoại.</div>
+                              <div *ngIf="phoneCtrl.errors?.['pattern']"
+                                   class="text-danger">Vui lòng nhập đúng định dạng số điện thoại.</div>
+                              <div *ngIf="phoneCtrl.errors?.['phoneTaken']" class="text-danger">Số điện thoại
+                                này đã được đăng ký .</div>
+                            </div>
+
+                          </div>
+
+
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                                <label class="form-label fw-bold" >MẬT KHẨU</label>
+                                <input  class="form-control "
+                                        [type]="showPassword ? 'text' : 'password'"
+                                        id="password"
+                                        name="password"
+                                        [(ngModel)]="password"
+                                        #passwordCtrl="ngModel"
+                                        required
+                                        pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$"
+                                />
+
+                              <div *ngIf="passwordCtrl.touched && passwordCtrl.invalid" class="error mt-2">
+                                <div *ngIf="passwordCtrl.errors?.['required']"
+                                     class="text-danger">Vui lòng nhập mật khẩu.</div>
+                                <div *ngIf="passwordCtrl.errors?.['pattern']"
+                                     class="text-danger">
+                                  Mật khẩu phải có 6 kí tự bao gồm kí tự hoa và số.
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                                <label class="form-label fw-bold" >XÁC NHẬN MẬT KHẨU</label>
+                                <input type="text" class="form-control "
+                                       [type]="showPassword ? 'text' : 'password'"
+                                       id="retypePassword"
+                                       name="retypePassword"
+                                       [(ngModel)]="retypePassword"
+                                       #retypePasswordCtrl="ngModel"
+                                       required
+                                       (ngModelChange)="checkPasswordsMatch()"
+                                />
+
+                              <div *ngIf="retypePasswordCtrl.touched && retypePasswordCtrl.invalid" class="error mt-2">
+                                <div *ngIf="retypePasswordCtrl.errors?.['required']"
+                                     class="text-danger">Vui lòng xác nhận mật khẩu.</div>
+                                <div *ngIf="retypePasswordCtrl.errors?.['passwordMismatch']"
+                                     class="text-danger">Mật khẩu không trùng khớp.</div>
+
+                              </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                                <div class="row">
+                                    <div class="col-9 ">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox"
+                                                style="width: 20px; height: 20px;margin-right: 10px;" />
+                                            <label class="form-check-label"
+                                                style="font-size: 18px;padding-top: 4px;"> Hiện mật khẩu </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3" style="padding-top: 4px;" >
+                                        <a routerLink="/forgotPass"  class="text-success" style="text-decoration: none; color: #238bc8 !important;
+                                         font-family: 'Kanit', sans-serif;
+
+                                    ">Quên mật khẩu?</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                                <div class="anim-btn" style="margin-left: 10px;" routerLink="/signin">
+                                    <button type="submit"
+                                            class="btnSignin slide_leftbtnSignin"
+                                            [disabled]="registerForm.invalid"
+                                            (click)="register()">ĐĂNG KÝ TÀI KHOẢN  </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6"
+                 style="background-color: rgb(255, 255, 255,0.4); border: 1px solid
+                 #ebeced; border-radius: 10px; margin-top: -20px;">
+                    <div class="row form-design " style="padding-left: 10px;padding-right: 5px;">
+                        <h2>BẠN ĐÃ CÓ TÀI KHOẢN</h2>
+                        <p>Hãy đăng nhập ngay để có thể nhận được các dịch vụ đặc biệt cho riêng bạn như kiểm tra
+                            lịch sử mua hàng và nhận phiếu giảm giá cho thành viên</p>
+                    </div>
+
+
+
+                        <div class="row">
+                            <div class="col-12 col-sm-5 col-md-5" style="margin-right: -15px;">
+
+                                    <div class="btnLogin slide_leftbtnLogin" routerLink="/login">ĐĂNG NHẬP </div>
+
+
+                            </div>
+                            <div class="col-12 col-sm-7 col-md-7">
+
+                                    <div class="btnLoginWithGoogle slide_leftbtnbtnLoginWithGoogle">
+                                    ĐĂNG NHẬP VỚI  <i></i>
+                                            <i style="color: #4285f4;" class="ggText">G</i>
+                                            <i style="color: #ea4335;" class="ggText">o</i>
+                                            <i style="color: #F4B400;" class="ggText">o</i>
+                                            <i style="color: #4285f4;" class="ggText">g</i>
+                                            <i style="color: #34a853;" class="ggText">l</i>
+                                            <i style="color: #ea4335;" class="ggText">e</i>
+
+                                          </div>
+
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

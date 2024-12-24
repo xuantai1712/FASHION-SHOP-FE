@@ -1,0 +1,129 @@
+<!--<div class="container mt-4">-->
+<!--  <div class="card">-->
+<!--    <div class="card-header bg-primary text-white">-->
+<!--      <h4>Edit SKU Details</h4>-->
+<!--    </div>-->
+<!--    <div class="card-body">-->
+<!--      &lt;!&ndash; Form Để Chỉnh Sửa SKU &ndash;&gt;-->
+<!--      <form (ngSubmit)="onSubmit()">-->
+<!--        &lt;!&ndash; SKU ID &ndash;&gt;-->
+<!--        <div class="mb-3">-->
+<!--          <label for="skuId" class="form-label">SKU ID</label>-->
+<!--          <input-->
+<!--            type="text"-->
+<!--            id="skuId"-->
+<!--            class="form-control"-->
+<!--            [(ngModel)]="skuDetails.id"-->
+<!--            name="skuId"-->
+<!--            readonly-->
+<!--          />-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; SKU Quantity in Stock &ndash;&gt;-->
+<!--        <div class="mb-3">-->
+<!--          <label for="qtyInStock" class="form-label">Quantity in Stock</label>-->
+<!--          <input-->
+<!--            type="number"-->
+<!--            id="qtyInStock"-->
+<!--            class="form-control"-->
+<!--            [(ngModel)]="skuDetails.qtyInStock"-->
+<!--            name="qtyInStock"-->
+<!--            required-->
+<!--          />-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; SKU Original Price &ndash;&gt;-->
+<!--        <div class="mb-3">-->
+<!--          <label for="originalPrice" class="form-label">Original Price</label>-->
+<!--          <input-->
+<!--            type="number"-->
+<!--            id="originalPrice"-->
+<!--            class="form-control"-->
+<!--            [(ngModel)]="skuDetails.originalPrice"-->
+<!--            name="originalPrice"-->
+<!--            required-->
+<!--          />-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; SKU Sale Price &ndash;&gt;-->
+<!--        <div class="mb-3">-->
+<!--          <label for="salePrice" class="form-label">Sale Price</label>-->
+<!--          <input-->
+<!--            type="number"-->
+<!--            id="salePrice"-->
+<!--            class="form-control"-->
+<!--            [(ngModel)]="skuDetails.salePrice"-->
+<!--            name="salePrice"-->
+<!--            required-->
+<!--          />-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <div class="dropdown" [class.open]="dropdownOpen">-->
+<!--            &lt;!&ndash; Trigger Button &ndash;&gt;-->
+<!--            <button type="button" class="dropdown-toggle" (click)="toggleDropdown()">-->
+<!--              <img-->
+<!--                *ngIf="selectedColor"-->
+<!--                [src]="'assets/color/' + selectedColor.value_img"-->
+<!--                class="selected-image"-->
+<!--              />-->
+<!--              <span> Select a color</span>-->
+<!--              <i class="arrow-down"></i>-->
+<!--            </button>-->
+
+<!--            &lt;!&ndash; Dropdown Options &ndash;&gt;-->
+<!--            <ul class="dropdown-menu" *ngIf="dropdownOpen">-->
+<!--              <li-->
+<!--                *ngFor="let color of colors"-->
+<!--                (click)="selectColor(color)"-->
+<!--                [class.selected]="color.id === sku.color.id"-->
+<!--              >-->
+<!--                <img [src]="'assets/color/' + color.value_img" alt="{{ color.name }}" class="option-image" />-->
+<!--                <span>{{ color.name }}</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+
+
+
+<!--        &lt;!&ndash; SKU Color &ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;          <label for="color" class="form-label">Color</label>&ndash;&gt;-->
+<!--&lt;!&ndash;          <select&ndash;&gt;-->
+<!--&lt;!&ndash;            id="color"&ndash;&gt;-->
+<!--&lt;!&ndash;            class="form-select"&ndash;&gt;-->
+<!--&lt;!&ndash;            [(ngModel)]="skuDetails.color.id"&ndash;&gt;-->
+<!--&lt;!&ndash;            name="color"&ndash;&gt;-->
+<!--&lt;!&ndash;            required&ndash;&gt;-->
+<!--&lt;!&ndash;          >&ndash;&gt;-->
+<!--&lt;!&ndash;            <option *ngFor="let color of colorOptions" [value]="color.id">&ndash;&gt;-->
+<!--&lt;!&ndash;              {{ color.name }}&ndash;&gt;-->
+<!--&lt;!&ndash;            </option>&ndash;&gt;-->
+<!--&lt;!&ndash;          </select>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; SKU Size &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;          <label for="size" class="form-label">Size</label>&ndash;&gt;-->
+<!--&lt;!&ndash;          <select&ndash;&gt;-->
+<!--&lt;!&ndash;            id="size"&ndash;&gt;-->
+<!--&lt;!&ndash;            class="form-select"&ndash;&gt;-->
+<!--&lt;!&ndash;            [(ngModel)]="skuDetails.size.id"&ndash;&gt;-->
+<!--&lt;!&ndash;            name="size"&ndash;&gt;-->
+<!--&lt;!&ndash;            required&ndash;&gt;-->
+<!--&lt;!&ndash;          >&ndash;&gt;-->
+<!--&lt;!&ndash;            <option *ngFor="let size of sizeOptions" [value]="size.id">&ndash;&gt;-->
+<!--&lt;!&ndash;              {{ size.name }}&ndash;&gt;-->
+<!--&lt;!&ndash;            </option>&ndash;&gt;-->
+<!--&lt;!&ndash;          </select>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--        &lt;!&ndash; Actions &ndash;&gt;-->
+<!--        <div class="text-end">-->
+<!--&lt;!&ndash;          <button type="button" class="btn btn-secondary me-2" (click)="goBack()">Cancel</button>&ndash;&gt;-->
+<!--          <button type="submit" class="btn btn-success">Save Changes</button>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

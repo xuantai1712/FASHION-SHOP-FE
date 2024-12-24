@@ -1,0 +1,93 @@
+<div *ngIf="showSuccessMessage" class="alert alert-success" role="alert">
+  {{ message }}
+</div>
+<h1 class="mt-4">Product List</h1>
+
+<div class="row mb-3">
+  <div class="col-md-2">
+    <a id="add-product-button" routerLink="/admin/addProduct" class="btn btn-success w-100">Add Product</a>
+  </div>
+  <div class="col-md-6 offset-md-3">
+    <input type="text" class="form-control" id="searchInput" placeholder="Search Products"
+           (keyup)="searchProducts($event)">
+  </div>
+</div>
+
+<!-- Product Table -->
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Product Name</th>
+    <th scope="col">Image</th>
+    <th scope="col">Price</th>
+    <th scope="col">Size</th>
+    <th scope="col">Color</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of listProduct; let i = index">
+    <td>{{ product.name }}</td>
+    <td>
+      <div class="img_product" *ngFor="let img of product.productImages">
+
+        <img [src]="'../../../../assets/product_img/' + img.imageUrl " alt="Product Image"
+             style="width: 50px; height: auto; margin: 5px; object-fit: cover;">
+        </div>
+    </td>
+
+    <!-- Price Column -->
+    <td>
+      <div *ngFor="let sku of product.skus">
+        <span>{{ sku.originalPrice | currency }}</span>
+      </div>
+    </td>
+
+    <!-- Size Column -->
+    <td>
+      <div *ngFor="let sku of product.skus">
+        <span>{{ sku.size.name }}</span>
+      </div>
+    </td>
+
+    <!-- Color Column -->
+    <td>
+      <div *ngFor="let sku of product.skus">
+        <img [src]="'../../../../assets/color_img/' + sku.color.value_img">
+        <!--        <span>{{ sku.color?.name }}</span>-->
+      </div>
+    </td>
+
+    <!-- Quantity Column -->
+    <td>
+      <div *ngFor="let sku of product.skus">
+        <span>{{ sku.qtyInStock }}</span>
+      </div>
+    </td>
+
+    <!-- Action Column -->
+    <td>
+      <div *ngFor="let sku of product.skus">
+        <button class="btn btn-primary btn-sm" (click)="viewDetails(product.id, sku.id)">Edit</button>
+        <button class="btn btn-danger btn-sm delete" [attr.data-sku-id]="sku.id"
+                (click)="deleteSku(product.id, sku.id)">Delete
+        </button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Pagination -->
+<div class="d-flex justify-content-center align-items-center mt-4">
+  <button class="btn btn-primary" [disabled]="page === 0" (click)="previousPage()">Previous</button>
+  <div>
+    <span *ngFor="let p of totalPagesArray" class="mx-1">
+      <button class="btn" [class.btn-primary]="p === page" (click)="changePage(p)">
+        {{ p + 1 }}
+      </button>
+    </span>
+  </div>
+  <button class="btn btn-primary" [disabled]="page === (totalPages || 1) - 1" (click)="nextPage()">Next</button>
+</div>

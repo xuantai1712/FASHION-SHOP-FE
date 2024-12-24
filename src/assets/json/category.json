@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "name": "Nam",
+        "subCategories": [
+            {
+                "id": 4,
+                "name": "Áo Khoác Nam",
+                "subCategories": []
+            },
+            {
+                "id": 5,
+                "name": "Quần Nam",
+                "subCategories": [
+                    {
+                        "id": 12,
+                        "name": "Quần Jeans Nam",
+                        "subCategories": []
+                    },
+                    {
+                        "id": 13,
+                        "name": "Quần Short Nam",
+                        "subCategories": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Nữ",
+        "subCategories": [
+            {
+                "id": 6,
+                "name": "Đồ Mặc Ngoài Nữ",
+                "subCategories": [
+                    {
+                        "id": 14,
+                        "name": "Áo Khoác Nữ",
+                        "subCategories": []
+                    },
+                    {
+                        "id": 15,
+                        "name": "Áo Len Nữ",
+                        "subCategories": []
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Quần Nữ",
+                "subCategories": [
+                    {
+                        "id": 16,
+                        "name": "Quần Jeans Nữ",
+                        "subCategories": []
+                    },
+                    {
+                        "id": 17,
+                        "name": "Quần Short Nữ",
+                        "subCategories": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Trẻ Em",
+        "subCategories": [
+            {
+                "id": 8,
+                "name": "Đồ Mặc Ngoài Trẻ Em",
+                "subCategories": [
+                    {
+                        "id": 18,
+                        "name": "Áo Khoác Trẻ Em",
+                        "subCategories": []
+                    },
+                    {
+                        "id": 19,
+                        "name": "Áo Len Trẻ Em",
+                        "subCategories": []
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Quần Trẻ Em",
+                "subCategories": [
+                    {
+                        "id": 20,
+                        "name": "Quần Jeans Trẻ Em",
+                        "subCategories": []
+                    },
+                    {
+                        "id": 21,
+                        "name": "Quần Short Trẻ Em",
+                        "subCategories": []
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "name": "Trẻ Sơ Sinh",
+                "subCategories": [
+                    {
+                        "id": 35,
+                        "name": "Quần Trẻ Sơ Sinh",
+                        "subCategories": []
+                    }
+                ]
+            }
+        ]
+    }
+]

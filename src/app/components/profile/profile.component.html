@@ -1,0 +1,66 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="osahan-account-page-left shadow-sm bg-white h-100">
+        <div class="border-bottom p-4">
+          <div class="osahan-user text-center">
+            <div class="osahan-user-media">
+<!--               Hiển thị ảnh đại diện từ thông tin người dùng-->
+<!--              <img class="mb-3 rounded-pill shadow-sm mt-1" src="user?.avatarUrl || 'https://bootdey.com/img/Content/avatar/avatar1.png'" alt="{{ 'name' }}">-->
+              <div class="osahan-user-media-body">
+                <!-- Hiển thị tên và thông tin người dùng -->
+                <h6 class="mb-2 text-dark">{{ userName }}</h6>
+                <p class="mb-1">{{ userPhone }}</p>
+                <p>{{userEmail }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="nav nav-tabs flex-column border-0 pt-4 pl-4 pb-4" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link d-flex justify-content-start align-items-center" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="false"><i class="icofont-food-cart"></i> <span>Lịch sử đơn hàng</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex justify-content-start align-items-center" id="edit-profile" routerLink="/edit-profile" role="tab" aria-controls="edit-profile" aria-selected="false"><i class="icofont-food-cart"></i> <span>Chỉnh sửa hồ sơ</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex justify-content-start align-items-center" id="addresses_list" routerLink="/addresses_list" role="tab" aria-controls="edit-profile" aria-selected="false"><i class="icofont-food-cart"></i> <span>Danh Sách địa chỉ</span>  </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="osahan-account-page-right shadow-sm bg-white p-4 h-100">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+            <h4 class="font-weight-bold mt-0 mb-4">Lịch sử đơn hàng</h4>
+
+            <div *ngFor="let order of orders" class="bg-white card mb-4 order-list shadow-sm">
+              <div class="gold-members p-4">
+                <div class="media">
+                  <div class="media-body">
+                    <span class="float-right text-info">Phương thức vận chuyển:  {{ order.shipping_method }} <i class="icofont-check-circled text-success"></i></span>
+                    <h6 class="mb-2">
+                      <a style="float: right" href="#">{{order.status}}</a>
+                    </h6>
+                    <p class="text-gray mb-1"><i class="icofont-location-arrow"></i>Địa chỉ giao hàng:  {{ order.shipping_address}}</p>
+                    <p class="text-gray mb-3"><i class="icofont-list"></i> Mã đơn hàng #{{ order.orderId }} <i class="icofont-clock-time ml-2"></i></p>
+                    <p class="text-dark">Số điện thoại: {{ order.phoneNumber}}</p>
+                    <hr>
+                    <div>
+                      <a style="float: right" class="btn btn-sm btn-outline-primary" [routerLink]="['/order', order.orderId]"><i class="icofont-headphone-alt"></i> Xem chi tiết</a>
+                    </div>
+                    <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold"> Tổng tiền</span> ${{order.total_money | currency : "VND" : "" }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            <ng-template #noOrders>-->
+<!--              <p>Đang tải dữ liệu</p>-->
+<!--            </ng-template>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

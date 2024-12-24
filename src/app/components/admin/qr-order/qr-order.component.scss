@@ -1,0 +1,118 @@
+/* Thiết lập chiều cao toàn màn hình cho HTML và body */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container chính cho chi tiết đơn hàng */
+.order-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Căn trên */
+  align-items: center;
+  height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* Cho phép cuộn khi nội dung dài */
+  box-sizing: border-box;
+}
+
+/* Tiêu đề chính */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  width: 100%;
+}
+
+/* Thông tin chi tiết đơn hàng */
+.order-details-section {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-section p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Chi tiết các sản phẩm trong đơn hàng */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  color: #555;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-item img {
+  max-width: 120px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.order-item p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Căn chỉnh thông tin sản phẩm */
+.order-item .product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.order-item .product-info p {
+  flex: 1;
+  text-align: left;
+}
+
+/* Hiển thị giá */
+.currency {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+/* Đảm bảo hiển thị responsive trên thiết bị nhỏ */
+@media (max-width: 768px) {
+  .order-details-container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .order-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .order-item img {
+    max-width: 80px;
+  }
+}

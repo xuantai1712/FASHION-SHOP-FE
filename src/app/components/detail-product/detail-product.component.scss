@@ -1,0 +1,387 @@
+ .detail-pr img {
+   object-fit: cover;
+   margin-left: 50px;
+   width: 70px;
+   height: 120px;
+   margin-bottom: 5px;
+ }
+
+ .detail-product-img img {
+   width: 480px;
+   height: 500px;
+   object-fit: cover;
+ }
+ .disabled {
+   pointer-events: none;  /* Vô hiệu hóa sự kiện click */
+   opacity: 0.5;  /* Giảm độ mờ để biểu thị rằng nút không thể nhấn */
+ }
+
+ .detail-product-name p {
+   text-transform: uppercase;
+   font-weight: 600;
+   font-style: italic;
+   font-family: "Kanit", sans-serif;
+   font-size: 27px;
+   margin-bottom: -5px;
+ }
+
+ .detail-product-name span {
+   color: #cecece;
+ }
+
+ @keyframes colorChange {
+   0% {
+     color: rgb(83, 4, 255);
+   }
+
+   25% {
+     color: rgb(103, 212, 255);
+   }
+
+   50% {
+     color: rgb(71, 30, 193);
+   }
+
+   75% {
+     color: rgb(100, 81, 196);
+   }
+
+   100% {
+     color: #506098;
+   }
+ }
+
+ .detail-product-price p {
+
+   font-weight: bold;
+   /* Độ đậm, tùy chỉnh theo ý thích */
+   animation: colorChange 5s infinite;
+   margin-top: 10px;
+   color: #506098;
+   // text-transform: uppercase;
+   font-weight: 600;
+   font-family: "Kanit", sans-serif;
+   font-size: 27px;
+   margin-bottom: -5px;
+ }
+
+ .detail-product-color {
+   height: auto;
+   width: 509px;
+   background-color: rgb(255, 255, 255);
+ }
+
+ .detail-product-color p {
+   font-weight: 600;
+   font-family: "Kanit", sans-serif;
+ }
+
+ .detail-product-colorAll {
+   margin-right: 0px;
+   display: block;
+   //   background-color: aqua;
+   height: 50px;
+   width: 100px;
+   // background-color: #90cde7;
+
+
+ }
+
+ .detail-product-colorAll span {
+   border: 1px solid white;
+   display: block;
+   margin-top: 3.5px;
+   margin-left: 3.5px;
+   z-index: 1;
+   // margin-right: 3px;
+   border-radius: 40px;
+   width: 40px;
+   height: 40px;
+   background-color: red;
+   padding-left: 4px;
+ }
+
+ .detail-product-colorAll span:hover {
+   border: 2px solid #82bad1;
+ }
+
+ .detail-product-colorAll.activeBoderColor {
+   margin-right: -8px;
+   margin-left: 14px;
+   padding: 0;
+   background-color: rgba(56, 56, 56, 0.4);
+   // margin-left: 20px;
+   border-radius: 40px;
+   border: 2px solid #ffffff;
+   width: 50px;
+   height: 50px;
+   // background-color: black;
+ }
+
+
+
+ //   mmmmm
+ .detail-product-size {
+   height: auto;
+   width: 509px;
+   background-color: rgb(255, 255, 255);
+ }
+
+ .detail-product-size p {
+   font-weight: 600;
+   font-family: "Kanit", sans-serif;
+ }
+
+ .detail-product-sizeAll {
+   margin-right: 0px;
+   display: block;
+   //   background-color: aqua;
+   height: 50px;
+   width: 100px;
+   // background-color: #90cde7;
+
+
+
+ }
+
+ .detail-product-sizeAll span p {
+   margin-top: 7px;
+ margin-left: 8px;
+
+
+ }
+
+ .detail-product-sizeAll span {
+
+   border: 1px solid #527584;
+   display: block;
+   margin-top: 4px;
+   margin-left: 4.5px;
+   z-index: 1;
+   // margin-right: 3px;
+   border-radius: 4px;
+   width: 40.5px;
+   height: 38px;
+   background-color: rgb(255, 255, 255);
+   padding-left: 4px;
+ }
+
+ .detail-product-sizeAll.activeBoderSize {
+
+   //margin-right: -7px;
+   margin-left: 20px;
+   padding: 0;
+
+
+   border-radius: 5px;
+   border: 1px solid #afafaf;
+   //border-left: 4px solid #ffffff ;
+
+   height: 48px;
+
+     span{
+      border-radius: 10px;
+       color: white;
+     border: 1px solid white;
+       background-color: #89c0d6;
+   }
+ }
+
+ .detail-product-sizeAll span:hover {
+   border: 1px solid #8f82d1;
+   background-color: #82bad1;
+   color: #ffffff;
+ }
+
+ .detail-product-qty span {
+  background-color: white;
+   text-align: center;
+   border-radius: 8px;
+   font-family: "Lucida Console", Monaco, monospace;
+   font-size: 14px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 0 #D80286;
+   -webkit-transition: ease-out 0.4s;
+   -moz-transition: ease-out 0.4s;
+   transition: ease-out 0.4s;
+ }
+
+ .detail-product-qty span:hover {
+   color: white;
+
+   box-shadow: inset 0 0 0 50px #D80286;
+ }
+
+ .detail-product-qty input {
+  font-family: "Kanit", sans-serif;
+
+
+   text-align: center;
+   border-top: 1px solid #eef0f2;
+   border-bottom: 1px solid #eef0f2;
+   border-left:1px solid #eef0f2 ;
+   border-right:none ;
+
+   height: 50px;
+   width: 150px;
+ }
+
+ .btnAddtoCart {
+   font-weight: bolder;
+
+   text-align: center;
+   width: 510px;
+   color: #000000;
+   border: 2px solid #82bad3;
+   border-radius: 5px;
+   padding: 18px 36px;
+   display: inline-block;
+   font-family: "Kanit", sans-serif;
+   font-size: 20px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 0 #82bad3;
+   -webkit-transition: ease-out 0.4s;
+   -moz-transition: ease-out 0.4s;
+   transition: ease-out 0.4s;
+ }
+
+ .slide_leftbtnAddtoCart:hover {
+   color: white;
+   box-shadow: inset 0 0 0 50px #82bad3;
+ }
+
+ .btnWishlist {
+   font-weight: bolder;
+
+   text-align: center;
+   width: 200px;
+   color: #e68ceb;
+   border: 2px solid #db1495;
+   border-radius: 5px;
+   padding: 18px 36px;
+   display: inline-block;
+   font-family: "Kanit", sans-serif;
+   font-size: 20px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 0 #db1495;
+   -webkit-transition: ease-out 0.4s;
+   -moz-transition: ease-out 0.4s;
+   transition: ease-out 0.4s;
+ }
+
+ .slide_leftbtnWishlist:hover {
+   color: white;
+   box-shadow: inset 0 0 0 50px #db1495;
+ }
+
+ .btnContinueBuy {
+  background-color: rgb(245, 245, 245,0.5);
+   font-weight: bolder;
+
+   text-align: center;
+   width: 300px;
+   color: #000000;
+   border: 2px solid #82bad3;
+   border-radius: 5px;
+   padding: 18px 36px;
+   display: inline-block;
+   font-family: "Kanit", sans-serif;
+   font-size: 20px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 0 #82bad3;
+   -webkit-transition: ease-out 0.4s;
+   -moz-transition: ease-out 0.4s;
+   transition: ease-out 0.4s;
+ }
+
+ .slide_leftbtnbtnContinueBuy:hover {
+  border: 2px solid #82bad3;
+
+   color: white;
+   box-shadow: inset 0 0 0 50px #82bad3;
+ }
+ .alert {
+   position: fixed;
+   top: 10px;
+   right: 10px;
+   width: auto;
+   z-index: 9999;
+ }
+
+ .describe-form {
+   padding-right: 200px;
+   padding-left: 200px;
+   // background-color: #82bad1;
+   text-align: center;
+   padding-top: 130px;
+
+ }
+ .describe-form span{
+   font-weight: 700;
+   font-size: 23px;
+   font-family: "Kanit", sans-serif;
+
+ }
+
+ .describe-form li{
+   text-align: left;
+   padding-top:20px;
+   font-weight: 400;
+   font-size: 18px;
+   font-family: "Kanit", sans-serif;
+
+ }
+
+
+ /* Nút chuyển trang */
+ .pagination button {
+   background-color: rgba(245, 245, 245, 0.5);
+   font-weight: bolder;
+   text-align: center;
+   width: 60px;
+   color: #000000;
+   border: 2px solid #82bad3;
+   border-radius: 5px;
+   padding: 12px;
+   display: inline-block;
+   font-family: "Kanit", sans-serif;
+   font-size: 16px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 0 #82bad3;
+   transition: ease-out 0.4s;
+ }
+
+ /* Hiệu ứng hover cho nút chuyển trang */
+ .pagination button:hover {
+   border: 2px solid #82bad3;
+   color: white;
+   background-color: #82bad3;
+   box-shadow: inset 0 0 0 50px #82bad3;
+ }
+
+ /* Hiệu ứng cho nút được chọn (active) */
+ .pagination button:active {
+   background-color: #7da9be;
+   color: white;
+   box-shadow: inset 0 0 0 5px #82bad3;
+ }
+
+ /* Nút Previous và Next */
+ .pagination button[disabled] {
+   background-color: #ddd;
+   color: #aaa;
+   cursor: not-allowed;
+   border: 2px solid #ccc;
+ }
+
+ /* Nút số trang đang được chọn */
+ .pagination button.selected {
+   background-color: #82bad3;
+   color: white;
+   border: 2px solid #82bad3;
+ }

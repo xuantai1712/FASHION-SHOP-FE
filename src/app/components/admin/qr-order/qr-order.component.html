@@ -1,0 +1,44 @@
+<div *ngIf="order" class="order-details-container">
+  <h1>Đơn Hàng</h1>
+
+  <div class="order-details-section">
+    <p><strong>Mã đơn hàng:</strong> {{ order.id }}</p>
+    <p><strong>Khách hàng:</strong> {{ order.user.name }}</p>
+    <p><strong>Email:</strong> {{ order.user.email }}</p>
+    <p><strong>Số điện thoại:</strong> {{ order.user.phone }}</p>
+    <p><strong>Tổng tiền:</strong> {{ order.totalMoney | currency:"VND":"" }} VNĐ</p>
+    <p><strong>Phương thức nhận hàng:</strong> {{ order.shippingMethod }}</p>
+    <p><strong>Phương thức thanh toán:</strong> {{ order.paymentMethod }}</p>
+    <p><strong>Tình trạng đơn hàng:</strong> {{ order.status }}</p>
+    <!-- Select box for status -->
+    <div>
+      <label for="statusSelect"><strong>Đổi tình trạng:</strong></label>
+      <select id="statusSelect" [(ngModel)]="selectedStatus" class="form-select">
+        <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+
+    <!-- Confirm button -->
+    <button
+      class="btn btn-primary mt-3"
+      (click)="changeOrderStatus()"
+      [disabled]="selectedStatus === order.status">
+      Xác nhận
+    </button>
+
+  </div>
+
+  <h2>Chi tiết đơn hàng:</h2>
+  <div *ngFor="let item of order.orderDetailItems" class="order-item">
+    <div class="product-info">
+      <img [src]="'/assets/product_img/' + item.productImage" alt="{{ item.productName }}" width="100">
+      <p class="ms-3">{{ item.productName }}</p>
+      <p><strong>Màu:</strong> {{ item.color.name }}</p>
+      <p><strong>Kích cỡ:</strong> {{ item.size.name }}</p>
+      <p><strong>Số Lượng:</strong> {{ item.quantity }}</p>
+      <p><strong>Giá:</strong> {{ item.price | currency:"VND":""}} VNĐ</p>
+    </div>
+
+
+  </div>
+</div>

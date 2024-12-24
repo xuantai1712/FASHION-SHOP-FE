@@ -1,0 +1,14 @@
+{
+  "LOGIN": "Iniciar sesión",
+  "SIGNUP": "Registrarse",
+  "PROFILE": "Perfil",
+  "LOGOUT": "Cerrar sesión",
+  "LANG": "Español",
+  "HOME_DESCRIPTION": "Descubre nuestra increíble colección de productos.",
+  "CART": "Carrito",
+  "TOTAL_PRICE": "PRECIO TOTAL",
+  "TOTAL_QUANTITY": "CANTIDAD TOTAL",
+  "TOTAL_BILL": "FACTURA TOTAL",
+  "BUY_NOW": "COMPRAR AHORA",
+  "CONTINUE_SHOPPING": "CONTINUAR COMPRANDO"
+}

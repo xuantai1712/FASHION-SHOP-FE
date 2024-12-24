@@ -1,0 +1,15 @@
+<div class="qr-scanner-container">
+  <!-- QR Scanner -->
+  <div class="scanner-area" *ngIf="!isQrCodeScanned">
+    <zxing-scanner
+      (scanSuccess)="handleQrCodeResult($event)">
+    </zxing-scanner>
+  </div>
+
+  <!-- Display scanned order ID -->
+  <div class="order-id-display" *ngIf="isQrCodeScanned">
+    <h3>Scanned Order ID: </h3>
+    <p *ngIf="orderId">{{ orderId }}</p>
+    <button *ngIf="orderId" (click)="getOrderDetails(orderId)">View Order Details</button>
+  </div>
+</div>

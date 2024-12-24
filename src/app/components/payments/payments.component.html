@@ -1,0 +1,385 @@
+<div class="container-fluid">
+  <div class="background-box">
+    <img src="../../../assets/images/payment_Background.jpeg" alt="">
+    <div class="overlay"></div>
+  </div>
+  <div class="content-box" style="padding-top: 70px;height: auto;">
+    <div class="container" style="padding: 50px; ">
+      <div class="row" style="width: auto;   height: auto;">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="textTitle">
+            <h2><i class="fa-brands fa-paypal" style="font-weight: bolder;font-size: 25px; color: #85c5de;"></i>
+              THANH TOÁN </h2>
+          </div>
+
+        </div>
+        <p></p>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <div class="row" style="background-color: rgba(255, 255, 255, 0.8);  width: 800px;
+                                border-radius: 18px; margin-left: 1px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 24px;">
+              <div class="textTitle">
+                <p></p>
+                <span>TÙY CHỌN THANH TOÁN </span>
+                <p>Miễn phí giao hàng áp dụng cho đơn hàng giao tận nơi từ 999.000VNĐ</p>
+
+              </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-left: 24px;">
+              <div class="row designText ">
+                <div class="col-xs-12 col -sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="form-check">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <label class="form-label fw-bold"  style="color: black">CHỌN PHƯƠNG THỨC NHẬN HÀNG </label>
+                      <select class="form-select designAddress"
+                              [(ngModel)]="selectedDeliveryMethod"
+                              (ngModelChange)="updateDeliveryFee()">
+                        <option value="1" selected> Giao hàng nhanh </option>
+                        <option value="2"> Giao hàng hỏa tốc</option>
+                        <option value="3"> Nhận tại cửa hàng</option>
+                      </select>
+
+                    </div>
+<!--                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="selectedDeliveryMethod" value="express" checked>-->
+<!--                    <label class="form-check-label text-success-emphasis" for="flexRadioDefault1">-->
+<!--                      Giao hàng nhanh-->
+<!--                    </label>-->
+<!--                  </div>-->
+<!--                  <div class="form-check">-->
+<!--                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" [(ngModel)]="selectedDeliveryMethod" value="fast" >-->
+<!--                    <label class="form-check-label text-success-emphasis" for="flexRadioDefault2">-->
+<!--                      Giao hàng hỏa tốc-->
+<!--                    </label>-->
+                  </div>
+
+
+                  <p style="padding-left: 15px;"> Phí vận chuyển : <span
+                      style="color: #00b7ff;font-weight: 500;">{{deliveryFee | currency : "VND" : ""  }}</span> Vnđ <br>
+                    <span style="font-weight: 500;">Thời gian giao hàng dự kiến TP. Hồ Chí Minh: 2 ngày, các tỉnh miền
+                      Nam khác: 3 ngày, Hà Nội: 3 ngày, các tỉnh miền Bắc khác: 4 ngày, các tỉnh miền Trung: 4
+                      ngày.</span>
+
+                  </p>
+
+                </div>
+
+
+                <p></p>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="padding-right: 30px;">
+                  <span>
+                    <hr>
+                  </span>
+                </div>
+<!--                <form [formGroup]="orderForm" (ngSubmit)="createOrder()">-->
+
+
+
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4"
+                  style="padding-right: 30px;text-align: center;">
+                  <span style="  font-family: 'Kanit', sans-serif; color: #a79898;">CHỌN ĐỊA CHỈ GIAO</span>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="padding-right: 30px;">
+                  <span>
+                    <hr>
+                  </span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-right: 30px;">
+                  <div class="row">
+
+                    <!-- render address -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding-top: 10px;"
+                         *ngFor="let orderList of listOrder">
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 nameUserAddress">
+                          <span>{{userList?.name}}</span>
+                        </div>
+
+                        <div class="col-xs-7 col-sm-3 col-md-7 col-lg-3 col-xl-7 userAddress">
+                          <span>{{orderList.street}}, {{orderList.ward}}, {{orderList.city}} </span>
+                          <p style="color: #00b7ff;font-weight: 500;">{{userList?.phone}} -
+                            <span style="color: black;font-weight: 500;">{{userList?.email}} </span> </p>
+                        </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                          <div class="anim-btn" style="margin-left: 10px;" >
+                            <div class="btnLogin slide_leftbtnLogin" (click)="setDefault(orderList)">Chọn</div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                          style="padding-left: 100px;padding-right: 100px;">
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <p></p>
+
+
+
+
+        <div class="accordion col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 " id="accordionPanelsStayOpenExample">
+          <div class="accordion-item backgroundAccordior">
+            <h2 class="accordion-header textTitle" id="panelsStayOpen-headingOne">
+              <button type="button slide_leftbackgroundAccordior" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseOne">
+                <span>THÊM ĐỊA CHỈ MỚI </span>
+                <p>Thêm một địa chỉ mới nếu chứa có.</p>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <form>
+                  <div class="row form-design">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <label class="form-label fw-bold" >HỌ VÀ TÊN </label>
+                      <input class="form-control " />
+
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <label class="form-label fw-bold" >SỐ ĐIỆN THOẠI </label>
+                      <input class="form-control " />
+
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4 ">
+                      <label class="form-label fw-bold">TỈNH/THÀNH PHỐ</label>
+                      <select class="form-select designAddress" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="1">TP Hồ Chí Minh</option>
+                        <option value="2">TP Hà Nội</option>
+                        <option value="3">TP Đà Nẵng</option>
+                      </select>
+
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <label class="form-label fw-bold">QUẬN </label>
+                      <select class="form-select designAddress" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="1">Quận 1</option>
+                        <option value="2">Quận 2</option>
+                        <option value="3">Quận 3</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <label class="form-label fw-bold">PHƯỜNG</label>
+                      <select class="form-select designAddress" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="1">Phường 1</option>
+                        <option value="2">Phường 2</option>
+                        <option value="3">Phường 3</option>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <label class="form-label fw-bold" >CHI TIẾT ĐỊA CHỈ </label>
+                      <input class="form-control " />
+
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox"
+                          style="width: 20px; height: 20px;margin-right: 10px;" />
+                        <label class="form-check-label"  style="font-size: 18px;padding-top: 4px;">
+                          Dùng làm địa chỉ thanh toán mặc định.</label>
+                      </div>
+                    </div>
+
+
+
+
+                    <p>Chúng tôi có thể liên hệ với bạn qua điện thoại hoặc email nếu chúng tôi có thắc mắc về đơn đặt
+                      hàng và tùy chọn giao hàng của bạn</p>
+
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                      <div class="anim-btn" style="margin-left: 10px;">
+                        <div class="btnCreateAddress slide_leftbtnCreateAddress">ĐĂNG KÝ ĐỊA CHỈ </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <p></p>
+          <div class="accordion-item backgroundAccordior">
+            <h2 class="accordion-header textTitle" id="panelsStayOpen-headingTwo">
+              <button class="collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo">
+                <span>PHƯƠNG THỨC THANH TOÁN </span>
+                <p>Hãy chọn phương thức thanh toán phù hợp với bạn. Nếu chứa có hãy thêm ngay !</p>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                    <label class="form-label fw-bold" >THANH TOÁN BẰNG </label>
+                    <select class="form-select designAddress"
+                            [(ngModel)]="indexPayment"     (ngModelChange)="getPaymentMethod()" >
+                      <option value="1" selected>Thanh toán khi nhận hàng </option>
+                      <option value="2"> VN PAY</option>
+                    </select>
+                  </div>
+                </div>
+
+
+
+                <div class="accordion-item  createCard">
+                  <h2 class="accordion-header textTitle" id="panelsStayOpen-headingThree">
+                    <button class="collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseThree" style="width: 755px;">
+                      <span>THÊM THẺ MỚI </span>
+                      <p>Thêm một địa chỉ mới nếu chứa có.</p>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
+                          <label class="form-label fw-bold"  > <img
+                              src="https://cdn.brandfetch.io/idV02t6WJs/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+                              alt="" width="100px;" height="50px"></label>
+                          <input class="form-control " />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <p></p>
+
+        </div>
+
+      </div>
+      <p></p>
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 placeholder" style="height: 500px;">
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="margin-top: -30px; position: fixed;
+                  left: 65%;top: 25%;
+              ">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="priceBill" style="font-weight: 700">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                    <span style="padding-right: 45px;">TỔNG TIỀN </span> <span
+                      style="font-size: 22px;  margin-left: 40px; ">{{totalPrice | currency : "VND" : ""}} </span> <span
+                      style="font-size: 10px;color: #2a2a2a; ">Vnđ
+                    </span>
+                  </div>
+<!--                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 20px;">-->
+<!--                    <span style="margin-right: 55px;">KHẤU TRỪ :</span>-->
+<!--                    <span style="font-size: 22px;  margin-left: 24px; ">20,000 </span> <span-->
+<!--                      style="font-size: 10px;color: #1c0f0f; ">Vnđ-->
+<!--                    </span>-->
+<!--                  </div>-->
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 20px;">
+                    <span>PHƯƠNG THỨC VẬN CHUYỂN :</span>
+                    <span style="font-size: 22px;  margin-left: 10px; ">{{  totalPrice | currency : "VND" : "" }} </span> <span
+                    style="font-size: 10px;color: #1c0f0f; ">Vnđ
+                    </span>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 20px;">
+                    <span>TỔNG SỐ LƯỢNG :</span>
+                    <span style="font-size: 22px;  margin-left: 34px; margin-right: 5px;"> {{totalQty}} </span>
+                    <span style="font-size: 18px;color: #82bad1; ">Sản phẩm
+                    </span>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
+                    <hr>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <span>TỔNG HÓA ĐƠN :</span>
+                    <span style="font-size: 26px;  margin-left: 30px;color: #00b7ff; "> {{totalPrice + deliveryFee| currency : "VND" : ""}}
+                    </span> <span style="font-size: 10px;color: #2a2a2a; ">Vnđ
+                    </span>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="priceBill">
+                  <div class="row">
+                      <div class="col-12">
+                          <div class="btnPayment slide_leftbtnPayment"(click)="createOrder(orderAdd)" >THANH TOÁN </div>
+                      </div>
+                    <!-- Modal -->
+                    <div *ngIf="isOrderCreated" class="modal">
+                      <div class="modal-content">
+                        <h2>Đặt hàng thành công!</h2>
+                        <p>Cảm ơn bạn đã đặt hàng tại cửa hàng của chúng tôi. Đây là thông tin đơn hàng của bạn:</p>
+                        <p><b>Đơn hàng ID: </b>{{ orderOK.orderId }}</p>
+                        <p><b>Địa chỉ giao hàng: </b>{{ orderOK.shipping_address }}</p>
+                        <p><b>Tổng tiền: </b>{{ orderOK.total_money | currency:'VND':'' }}</p>
+                        <p>Chúc bạn một ngày tốt lành!</p>
+                        <button (click)="closeModal()">Đóng</button>
+                      </div>
+                    </div>
+
+                    <p></p>
+                      <div class="col-5">
+                          <hr>
+                      </div>
+                      <div class="col-2" style="text-align: center;">
+
+                          Or
+                      </div>
+                      <div class="col-5">
+                          <hr>
+                      </div>
+                      <p></p>
+                      <div class="col-12">
+                          <div class="btnBuyToContinue slide_leftbtnBuyToContinue">TIẾP TỤC MUA SẮM</div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

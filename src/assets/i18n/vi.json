@@ -1,0 +1,33 @@
+{
+  "LOGIN": {
+    "TITLE": "ĐĂNG NHẬP",
+    "EMAIL_LABEL": "ĐỊA CHỈ EMAIL",
+    "PASSWORD_LABEL": "MẬT KHẨU",
+    "LOGIN_BUTTON": "ĐĂNG NHẬP",
+    "FORGOT_PASSWORD": "Quên mật khẩu?",
+    "SHOW_PASSWORD": "Hiển thị mật khẩu",
+    "LOGIN_WITH_GOOGLE": "Đăng nhập với Google",
+    "EMAIL_REQUIRED": "Vui lòng nhập email.",
+    "EMAIL_PATTERN": "Vui lòng nhập một địa chỉ email hợp lệ.",
+    "PASSWORD_REQUIRED": "Vui lòng nhập mật khẩu.",
+    "PASSWORD_PATTERN": "Mật khẩu phải có ít nhất 6 ký tự, bao gồm 1 chữ cái in hoa và 1 chữ số."
+  },
+  "SIGNUP": {
+    "TITLE": "TẠO MỘT TÀI KHOẢN",
+    "DESCRIPTION": "Hãy tạo tài khoản ngay! Bạn có thể nhận được các dịch vụ đặc biệt.",
+    "CREATE_ACCOUNT_BUTTON": "ĐĂNG KÝ TÀI KHOẢN MỚI"
+  },
+  "LOGIN1": "Đăng Nhập",
+  "SIGNUP1": "Đăng Ký",
+  "PROFILE": "Hồ Sơ",
+  "LOGOUT": "Đăng Xuất",
+  "LANG": "Tiếng Việt",
+  "HOME_DESCRIPTION": "Khám phá bộ sưu tập sản phẩm tuyệt vời của chúng tôi.",
+  "CART": "Giỏ Hàng",
+  "TOTAL_PRICE": "TỔNG TIỀN",
+  "TOTAL_QUANTITY": "TỔNG SỐ LƯỢNG",
+  "TOTAL_BILL": "TỔNG HÓA ĐƠN",
+  "BUY_NOW": "MUA NGAY",
+  "CONTINUE_SHOPPING": "TIẾP TỤC MUA SẮM"
+
+}
